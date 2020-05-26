@@ -1,5 +1,5 @@
 project('libarduinocore-avr', 'c', 'cpp',
-  version : '1.6.20',
+  version : '1.8.2',
   license : 'LGPL2.1+',
   default_options : ['buildtype=minsize',
                      'b_lto=true',
@@ -92,6 +92,7 @@ if do_install
     'cores/arduino/Server.h',
     'cores/arduino/Stream.h',
     'cores/arduino/USBAPI.h',
+    'cores/arduino/USBCore.h',
     'cores/arduino/USBDesc.h',
     'cores/arduino/Udp.h',
     'cores/arduino/WCharacter.h',
@@ -99,7 +100,6 @@ if do_install
     'cores/arduino/binary.h',
     'cores/arduino/new.h',
     'cores/arduino/wiring_private.h',
-    'cores/arduino/USBCore.h'
     ])
   install_headers(arduinocore_header, install_dir: 'lib/avr/include/arduino')
   install_headers(['variants/' + cross_variant + '/pins_arduino.h'], install_dir : 'lib/avr/include/arduino/variants/' + cross_variant)
