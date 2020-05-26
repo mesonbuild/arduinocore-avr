@@ -60,6 +60,8 @@ arduinocore_main_src = files([
 
 
 includes = include_directories([arduinocore_inc])
+
+# Dependencies will use this include_directories to suppress warnings in the Arduino headers
 includes_sys = include_directories([arduinocore_inc], is_system: true)
 
 arduinocore_lib = static_library('arduinocore-' + cross_variant, arduinocore_src, include_directories : [includes],
