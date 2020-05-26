@@ -60,12 +60,13 @@ arduinocore_main_src = files([
 
 
 includes = include_directories([arduinocore_inc])
+includes_sys = include_directories([arduinocore_inc], is_system: true)
 
 arduinocore_lib = static_library('arduinocore-' + cross_variant, arduinocore_src, include_directories : [includes],
   install : do_install,
   install_dir : 'lib/avr/lib')
 arduinocore_dep = declare_dependency(
-  include_directories : [includes],
+  include_directories : [includes_sys],
   link_with : arduinocore_lib)
 
 arduinocore_main_lib = static_library('arduinocore-main-' + cross_variant, arduinocore_main_src, include_directories : [includes],
